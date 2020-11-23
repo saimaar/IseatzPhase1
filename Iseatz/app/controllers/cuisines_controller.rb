@@ -2,10 +2,9 @@ require 'dotenv'
 require 'json'
 Dotenv.load
 
-class RestaurantsController < ApplicationController
+class CuisinesController < ApplicationController
 
-  def restaurants
-
+  def cuisines
    @response = RestClient.get "https://developers.zomato.com/api/v2.1/cities?q=#{params["city"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}
    @city_info = JSON.parse(@response.body)["location_suggestions"][0]
    if @city_info
