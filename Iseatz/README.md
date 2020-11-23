@@ -1,5 +1,9 @@
 # IseatzPhase1
 
+Using Zomato API, `https://developers.zomato.com/api`, created endpoints where 
+ - Request: recieves a city name string and api key 
+ - Response: recieves city info and list of cuisines in that city
+
 ## Gems 
 - `rest-client` - A simple HTTP and REST client for Ruby
 - `dotenv` - Dotenv is a zero-dependency module that loads environment variables from a .env
