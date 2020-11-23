@@ -1,8 +1,8 @@
 # IseatzPhase1
 
 Using Zomato API, `https://developers.zomato.com/api`, created endpoints where 
- - Request: recieves a city name string and api key 
- - Response: recieves city info and list of cuisines in that city
+ - Request: receives a city name string and api key 
+ - Response: receives city info and list of cuisines in that city
 
 ## Gems 
 - `rest-client` - A simple HTTP and REST client for Ruby
