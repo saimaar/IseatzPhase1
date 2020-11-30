@@ -1,0 +1,6 @@
+I, [2020-11-29T21:02:47.628055 #23568]  INFO -- : 500 Internal Server Error
+I, [2020-11-29T21:03:01.003191 #23568]  INFO -- : 500 Internal Server Error
+I, [2020-11-29T21:04:32.344561 #23568]  INFO -- : 500 Internal Server Error
+I, [2020-11-29T21:27:53.695780 #23568]  INFO -- : 500 Internal Server Error
+I, [2020-11-29T21:45:24.368621 #23568]  INFO -- : Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".
+I, [2020-11-29T21:53:27.685607 #23568]  INFO -- : 500 Internal Server Error
