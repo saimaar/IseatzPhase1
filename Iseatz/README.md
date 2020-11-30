@@ -12,7 +12,7 @@ Using Zomato API, `https://developers.zomato.com/api`, created endpoints where
 - Clone this repo to your local machine `git clone <this-repo-url>`
 - run cd `Iseatz`, to access the project
 - create .env file in the root folder (/ISEATZ)
-- Your .env file should look like this API_KEY=abcd111111111111111
+- Your .env file should look like this `API_KEY=abcd111111111111111`
 - run `bundle install` to install required dependencies
 - run `rails s` to fire up the server
 - Using Postman: send a GET request to `http://localhost:3000/cuisines`
