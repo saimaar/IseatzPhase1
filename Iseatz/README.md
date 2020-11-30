@@ -9,10 +9,12 @@ Using Zomato API, `https://developers.zomato.com/api`, created endpoints where
 - `dotenv` - Dotenv is a zero-dependency module that loads environment variables from a .env
 
 ## SETUP
+
+### GET /Cuisines
 - Clone this repo to your local machine `git clone <this-repo-url>`
 - run cd `Iseatz`, to access the project
 - create .env file in the root folder (/ISEATZ)
-- Your .env file should look like this `API_KEY=abcd111111111111111`
+ -  Your .env file should look like this `API_KEY=abcd111111111111111`
 - run `bundle install` to install required dependencies
 - run `rails s` to fire up the server
 - Using Postman: send a GET request to `http://localhost:3000/cuisines`
@@ -21,7 +23,7 @@ Using Zomato API, `https://developers.zomato.com/api`, created endpoints where
  - `Value: cityname (eg. Houston)`
 - If not using Postman, simply type `http://localhost:3000/cuisines?city=houston` in your web browser. 
   - In place of houston, you may type any city name. 
- 
+
 ### GET /Reviews
 
 - Clone this repo to your local machine `git clone <this-repo-url>`
@@ -37,3 +39,4 @@ Using Zomato API, `https://developers.zomato.com/api`, created endpoints where
  - `Key: cuisine_id`
  - `Value: (eg. 99)`
 - If not using Postman, simply type `http://localhost:3000/reviews?city_id=280&cuisine_id=99` in your web browser. 
+
