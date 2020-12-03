@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     begin
     @search_response = RestClient.get "https://developers.zomato.com/api/v2.1/search?entity_id=#{params["city_id"]}&entity_type=city&cuisines=#{params["cuisine_id"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}
     ## get the first 5 from the search_ response
-    @restaurants = JSON.parse(@search_response.body)["restaurants"].slice(0,5)
+    @restaurants = JSON.parse(@search_response.body)["restaurants"].slice(0,3)
 
     if @restaurants.empty?
       render json: {message: "No Reviews Found"}
@@ -18,10 +18,12 @@ class ReviewsController < ApplicationController
    ##mapping over each restaurant and making request to endpoint with each restaurant_id
     @reviews = @restaurants.map{|element|
 
-      JSON.parse(RestClient.get "https://developers.zomato.com/api/v2.1/reviews?res_id=#{element["restaurant"]["R"]["res_id"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}).merge(:restaurant_name => element["restaurant"]["name"], :location => element["restaurant"]["location"],:cuisines => element["restaurant"]["cuisines"])
-    }
+      element["restaurant"]["all_reviews"].replace(JSON.parse(RestClient.get "https://developers.zomato.com/api/v2.1/reviews?res_id=#{element["restaurant"]["R"]["res_id"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}))
 
-    render json: {reviews: @reviews}
+      element["restaurant"].delete("apikey")
+      return element
+    }
+    render json: {restaurants: @reviews}
   end
   rescue => error
     @logger = Logger.new("my_log.txt")
@@ -29,10 +31,6 @@ class ReviewsController < ApplicationController
     render json: {usermessage: "wrong input values", errormessage: error.message}
 
   end
-
-
-
-
 
   end ## end of method
 

@@ -4,3 +4,12 @@ I, [2020-11-29T21:04:32.344561 #23568]  INFO -- : 500 Internal Server Error
 I, [2020-11-29T21:27:53.695780 #23568]  INFO -- : 500 Internal Server Error
 I, [2020-11-29T21:45:24.368621 #23568]  INFO -- : Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".
 I, [2020-11-29T21:53:27.685607 #23568]  INFO -- : 500 Internal Server Error
+I, [2020-11-30T19:47:17.856257 #29419]  INFO -- : 500 Internal Server Error
+I, [2020-12-01T14:39:01.136908 #31225]  INFO -- : no implicit conversion of String into Integer
+I, [2020-12-01T14:39:12.147809 #31225]  INFO -- : no implicit conversion of String into Integer
+I, [2020-12-01T14:40:15.952554 #31225]  INFO -- : no implicit conversion of String into Integer
+I, [2020-12-01T15:14:19.930546 #31225]  INFO -- : undefined method `+' for #<Hash:0x00007fa6d682d938>
+I, [2020-12-01T15:14:43.385269 #31225]  INFO -- : no implicit conversion of Array into Hash
+I, [2020-12-01T15:17:57.426056 #31225]  INFO -- : no implicit conversion of Array into Hash
+I, [2020-12-01T15:27:57.478367 #31225]  INFO -- : undefined method `remove' for #<Hash:0x00007fa6d4777ec8>
+I, [2020-12-01T15:28:08.824812 #31225]  INFO -- : wrong number of arguments (given 0, expected 1)
