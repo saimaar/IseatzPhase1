@@ -14,7 +14,10 @@ class CuisinesController < ApplicationController
 ## if the city info is true then we send requst to the cusines endpoint
    if @city_info
      @cuisines = RestClient.get "https://developers.zomato.com/api/v2.1/cuisines?city_id=#{@city_info["id"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}
-     render json: JSON.parse(@cuisines.body).merge({:city => @city_info})
+
+     @city_info["cuisines"] = JSON.parse(@cuisines.body)["cuisines"]
+
+     render json: @city_info
    else
      render json: {message: "City Not Found", error: 404}
    end

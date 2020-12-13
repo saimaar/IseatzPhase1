@@ -19,11 +19,11 @@ class ReviewsController < ApplicationController
     @reviews = @restaurants.map{|element|
 
       element["restaurant"]["all_reviews"].replace(JSON.parse(RestClient.get "https://developers.zomato.com/api/v2.1/reviews?res_id=#{element["restaurant"]["R"]["res_id"]}", {content_type: :json, accept: :json, "user-key": ENV["API_KEY"]}))
-
       element["restaurant"].delete("apikey")
-      return element
+      element
     }
-    render json: {restaurants: @reviews}
+
+    render json: @reviews
   end
   rescue => error
     @logger = Logger.new("my_log.txt")
